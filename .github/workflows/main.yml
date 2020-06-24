@@ -26,6 +26,13 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
 
+    - name: check
+      id: filepath
+      run: echo ::set-output name=commitpath::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+
+    - name: echo files
+      run: echo ${{ steps.filepath.outputs.commitpath }}
+
     - name: Build happy-day service
       run: sudo bash services/happy-day/build.bash
 
