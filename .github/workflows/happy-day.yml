@@ -12,4 +12,4 @@ jobs:
       - uses: actions/checkout@master
       - name: Run build script
         working-directory: ./services/happy-day
-        run: bash ./build.sh
+        run: bash ./build.bash
