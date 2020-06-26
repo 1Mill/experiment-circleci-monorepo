@@ -5,13 +5,19 @@ on:
     paths:
       - 'services/happy-day/**'
 
+defaults:
+  run:
+    working-directory: ./services/hello-world
+
 jobs:
   build:
-    defaults:
-        run:
-          working-directory: ./services/hello-world
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - name: Run build script
-        run: bash ./build.bash
+      - run: bash ./build.bash
+  deploy-to-production:
+    needs: [build, test]
+  deploy-to-staging:
+    needs: [build, test]
+  test:
+    needs: [build]
