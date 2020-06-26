@@ -1,6 +1,7 @@
 name: main
 
-on: [pull_requests]
+on:
+  push:
 
 jobs:
   build:
