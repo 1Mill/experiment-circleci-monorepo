@@ -7,9 +7,11 @@ on:
 
 jobs:
   build:
+    defaults:
+        run:
+          working-directory: ./services/hello-world
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Run build script
-        working-directory: ./services/happy-day
         run: bash ./build.bash

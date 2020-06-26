@@ -1,0 +1,17 @@
+name: hello-world-ci
+
+on:
+  push:
+    paths:
+      - 'services/hello-world/**'
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ./services/hello-world
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run build script
+        run: bash ./build.bash
