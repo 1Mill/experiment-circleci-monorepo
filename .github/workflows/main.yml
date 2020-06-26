@@ -1,12 +1,13 @@
 name: main
 
-on: [push]
+on: [pull_requests]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - run: curl -o out.json ${{ github.event.pull_request.commits_url }}
       - name: Run build script
         working-directory: ./tools
         run: bash ./build.bash

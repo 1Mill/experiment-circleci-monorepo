@@ -1,4 +1,7 @@
 # ! bin/bash
-echo "Tools build! 1" &&
-echo "Tools build! 2" &&
-echo "Tools build! 3"
+echo "Tools starting ..."
+
+echo "$GITHUB_CONTEXT"
+echo curl -o out.json $GITHUB_CONTEXT
+
+echo "Tools finished"
