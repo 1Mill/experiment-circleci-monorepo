@@ -3,7 +3,6 @@ Dockerfile
 docker-compose.yml
 
 .env
-secrets.*
 
 build.bash
 deploy.bash
