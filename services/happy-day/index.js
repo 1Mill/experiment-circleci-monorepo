@@ -1,20 +1,11 @@
-const fs = require('fs');
+const sopsDecode = require('sops-decoder');
 
-let secure = {};
-try {
-	fs.readFile('./secrets.dev.sops.json', (err, data) => {
-		const secrets = JSON.parse(data.toString());
-
-		const {
-			example_key,
-			hello,
-		} = secrets;
-
-		console.log(hello);
-		console.log(example_key);
-	});
-	console.log('Success');
-} catch (err) {
-	console.error(err);
-	console.error('Unable to decode secrets');
+const main = async() => {
+	try {
+		const data = await sopsDecode.decodeFile('./secrets/dev.sops.json');
+		console.log(JSON.stringify(data));
+	} catch (err) {
+		console.error(err);
+	}
 }
+main();
