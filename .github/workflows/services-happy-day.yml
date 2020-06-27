@@ -21,6 +21,7 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@master
       - run: bash ./deploy-to-production.bash
 
   deploy-to-staging:
@@ -28,10 +29,12 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@master
       - run: bash ./deploy-to-staging.bash
 
   test:
     needs: [build]
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@master
       - run: bash ./test.bash
