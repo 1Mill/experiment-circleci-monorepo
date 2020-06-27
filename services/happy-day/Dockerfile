@@ -2,7 +2,9 @@ FROM node:14-buster
 
 RUN \
 	apt-get update && \
-	apt-get install --yes wget
+	apt-get install --yes \
+		vim \
+		wget
 
 ENV SOPS_VERSION=3.5.0
 RUN wget -O /tmp/sops.deb https://github.com/mozilla/sops/releases/download/v${SOPS_VERSION}/sops_${SOPS_VERSION}_amd64.deb

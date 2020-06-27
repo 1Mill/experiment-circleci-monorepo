@@ -3,3 +3,6 @@ version: '3.8'
 services:
   node:
     build: .
+    volumes:
+      - ${AWS_CREDENTIALS_PATH}:/root/.aws
+      - ./:/app
