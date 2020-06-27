@@ -4,7 +4,7 @@
 	"example_array": [
 		"ENC[AES256_GCM,data:85elUM6LvXUAl/vuOvA=,iv:mPycQo3dA7ZEmqHlTvaWjXAM45yEJJjWzpO483uRd+Q=,tag:PSCpWusLuAgscAnL/h9a0g==,type:str]",
 		"ENC[AES256_GCM,data:wunf6omzgr2k+MNXeqo=,iv:1r9hzMFRvA0Si72V4VxfKNVHyo7ivMFzsrvkLy4tLjI=,tag:2DZ5eq9dId7cjPAcv9fM+g==,type:str]",
-		"ENC[AES256_GCM,data:uHQHHzZNZjrxVzH44CLjTWpvVBSSS0NlUkZSqT88X9BgZHLBQw==,iv:B42Bg5P6Af8lNvFjA2qszFdiniFEpali4L559vWZN7g=,tag:3RT46G3R+eaAZCek8CuE+A==,type:str]"
+		"ENC[AES256_GCM,data:+TPlqLXDEgsYYU1yBG//jVhgTLUeJJExWQ==,iv:v/NhWAY31WVJ+Rp/I3o7MGAtgSduyY5XnCAefGM9EEU=,tag:+u74YLaFqgVhoM9ygrPPdg==,type:str]"
 	],
 	"example_number": "ENC[AES256_GCM,data:zuPkcv16qSvzTg==,iv:y/Cf7ZPAMVZZh9t28D5JJrPGC/+V7mKIzOpTCaDNZxU=,tag:nj5Yu73usizbStWpTjXoKg==,type:float]",
 	"example_booleans": [
@@ -22,8 +22,8 @@
 		],
 		"gcp_kms": null,
 		"azure_kv": null,
-		"lastmodified": "2020-06-27T20:11:52Z",
-		"mac": "ENC[AES256_GCM,data:AEAHLvAujY1SQUpCoFrpdWhdIeG/cnR3ksyZRs4qYdrZ2t423pcGMXpiz/WEhd54Oa9BfKnqYTROYZzTFPwjmJZWrrAjHUZyBzY4BjeMR/BQjods987ZmCnOPN8h6qvGJ8R1gUUEoPCQ0HJx1I1O+73B3EvDPjAfLguJeNhLg2M=,iv:ibnyFStG5S6i2FzvWB8g0yGlCplU/W7wgVYlBqtYhoQ=,tag:1qHDu4r9MDuHj7eGloLeWA==,type:str]",
+		"lastmodified": "2020-06-27T20:29:52Z",
+		"mac": "ENC[AES256_GCM,data:XwU1nG0LudB1n/JgtjHEAQ7JQoa5K0HnjdWmFq4y/ojCCgnXTjm0lFK56mKWH4gAugdYT3nuv2R3jK2dqismI/pJpADO6s+KTWCjzQK1jPtJbj5WYx0jIeJLIh9Kj2Bw3U4rtQRFy+Epz1zJgmZ/0wVYde6r8p4Cur2zsiaZ0CA=,iv:IQDR4pDvCynMH3NsD9N5OUUoBABTBmlSC8qFjynHscI=,tag:9dlmHsW9HxgQ9NYQB/oEBg==,type:str]",
 		"pgp": null,
 		"unencrypted_suffix": "_unencrypted",
 		"version": "3.5.0"
