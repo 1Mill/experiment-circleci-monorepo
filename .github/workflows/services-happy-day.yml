@@ -16,8 +16,19 @@ jobs:
       - uses: actions/checkout@master
       - run: bash ./build.bash
   deploy-to-production:
+    if: GITHUB_REF == "refs/headers/master"
     needs: [build, test]
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "hello world!"
   deploy-to-staging:
+    if: GITHUB_REF == "refs/headers/development"
     needs: [build, test]
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "hello world!"
   test:
     needs: [build]
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "hello world!"
