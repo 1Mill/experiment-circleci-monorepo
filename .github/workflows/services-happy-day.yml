@@ -20,15 +20,15 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
-      - run: echo "hello world!"
+      - run: echo Hello world!
   deploy-to-staging:
     if: ${{ github.ref }} == "refs/heads/development"
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
-      - run: echo "hello world!"
+      - run: echo Hello world!
   test:
     needs: [build]
     runs-on: ubuntu-20.04
     steps:
-      - run: bash echo "triggered"
+      - run: echo Hello world!
