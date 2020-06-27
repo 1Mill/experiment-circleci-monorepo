@@ -22,7 +22,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - run: bash ./deploy-to-production.bash
+      - name: Deploy to production
+        env:
+          ENVIRONMENT: production
+        run: bash ./deploy.bash
 
   deploy-to-staging:
     if: endsWith(github.ref, 'development') == true
@@ -30,7 +33,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - run: bash ./deploy-to-staging.bash
+      - name: Deploy to staging
+        env:
+          ENVIRONMENT: staging
+        run: bash ./deploy.bash
 
   test:
     needs: [build]
