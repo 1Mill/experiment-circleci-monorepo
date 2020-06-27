@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./services/hello-world
+    working-directory: ./services/happy-day
 
 jobs:
   build:
