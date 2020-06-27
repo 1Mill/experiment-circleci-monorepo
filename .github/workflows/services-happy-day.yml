@@ -15,20 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: bash ./build.bash
+
   deploy-to-production:
     if: ${{ github.ref }} == "refs/heads/master"
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
-      - run: echo Hello world!
+      - run: bash ./deploy-to-production.bash
+
   deploy-to-staging:
     if: ${{ github.ref }} == "refs/heads/development"
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
-      - run: echo Hello world!
+      - run: bash ./deploy-to-staging.bash
+
   test:
     needs: [build]
     runs-on: ubuntu-20.04
     steps:
-      - run: echo Hello world!
+      - run: bash ./test.bash
