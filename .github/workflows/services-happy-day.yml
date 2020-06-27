@@ -16,13 +16,13 @@ jobs:
       - uses: actions/checkout@master
       - run: bash ./build.bash
   deploy-to-production:
-    if: ${{ GITHUB_REF }} == "refs/headers/master"
+    if: ${{ github.ref }} == "refs/headers/master"
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
       - run: echo "hello world!"
   deploy-to-staging:
-    if: ${{ GITHUB_REF }} == "refs/headers/development"
+    if: ${{ github.ref }} == "refs/headers/development"
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
