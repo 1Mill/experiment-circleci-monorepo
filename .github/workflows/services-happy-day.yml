@@ -17,7 +17,7 @@ jobs:
       - run: bash ./build.bash
 
   deploy-to-production:
-    if: ${{ github.ref }} == "refs/heads/master"
+    if: endsWith(github.ref, 'master') == true
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
@@ -25,7 +25,7 @@ jobs:
       - run: bash ./deploy-to-production.bash
 
   deploy-to-staging:
-    if: ${{ github.ref }} == "refs/heads/development"
+    if: endsWith(github.ref, 'development') == true
     needs: [build, test]
     runs-on: ubuntu-20.04
     steps:
