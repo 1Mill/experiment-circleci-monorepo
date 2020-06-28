@@ -4,5 +4,7 @@
     "okay-to-delete-testing-2",
     "okay-to-delete-testing-3",
     "okay-to-delete-testing-4"
-  ]
+  ],
+  "AWS_PROFILE": "terraform",
+  "AWS_REGION": "us-east-1"
 }
