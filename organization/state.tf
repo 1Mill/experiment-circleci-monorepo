@@ -3,7 +3,7 @@ terraform {
 
 	backend "s3" {
 		// profile = ENVIRONMENT AWS_PROFILE
-		// region = ENVIRONMENT AWS_DEFAULT_REGION
+		region = "us-east-1"
 
 		// access_key = ENVIRONMENT AWS_ACCESS_KEY_ID
 		// secret_key = ENVIRONMENT AWS_SECRET_ACCESS_KEY
