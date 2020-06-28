@@ -5,15 +5,15 @@ const PRODUCTION_ENVIRONMENT = 'production';
 const STAGING_ENVIRONMENT = 'staging';
 
 _filePath = () => {
-	let prefix = "";
+	let prefix = '';
 	if (process.env.NODE_ENV === DEVELOPMENT_ENVIRONMENT) {
-		prefix = "dev";
+		prefix = 'dev';
 	}
 	if (process.env.NODE_ENV === PRODUCTION_ENVIRONMENT) {
-		prefix = "prod";
+		prefix = 'prod';
 	}
 	if (process.env.NODE_ENV === STAGING_ENVIRONMENT) {
-		prefix = "stag";
+		prefix = 'stag';
 	}
 	return `./secrets/${prefix}.sops.json`;
 };

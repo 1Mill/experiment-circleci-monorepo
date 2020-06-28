@@ -1,4 +1,4 @@
-const { getSecrets } = require("./utilities/getSecrets");
+const { getSecrets } = require('./utilities/getSecrets');
 
 const main = async() => {
 	const { hello } = await getSecrets();
