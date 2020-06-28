@@ -1,11 +1,16 @@
-const sopsDecode = require('sops-decoder');
+const { getSecrets } = require("./utilities/getSecrets");
 
 const main = async() => {
-	try {
-		const data = await sopsDecode.decodeFile('./secrets/dev.sops.json');
-		console.log(JSON.stringify(data));
-	} catch (err) {
-		console.error(err);
-	}
+	const { hello } = await getSecrets();
+	console.log(hello);
+	// setTimeout(() => {
+	// 	const secrets = SecretsClass.secrets;
+	// 	console.log(secrets);
+	// 	const { hello } = secrets;
+	// 	console.log(hello);
+	// }, 3000);
 }
-main();
+
+setInterval(() => {
+	main();
+}, 1000)
