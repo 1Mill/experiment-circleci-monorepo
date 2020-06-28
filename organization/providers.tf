@@ -7,3 +7,6 @@ provider "aws" {
 
 	version = "~> 2.68"
 }
+provider "sops" {
+	version = "~> 0.5.1"
+}
