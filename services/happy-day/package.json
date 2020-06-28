@@ -9,7 +9,5 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "sops-decoder": "^0.9.4"
-  }
+  "dependencies": {}
 }

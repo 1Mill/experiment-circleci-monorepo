@@ -1,4 +1,4 @@
-const sopsDecode = require('sops-decoder');
+const { runShellCommand } = require('./runShellCommand');
 
 const DEVELOPMENT_ENVIRONMENT = 'development';
 const PRODUCTION_ENVIRONMENT = 'production';
@@ -18,14 +18,15 @@ _filePath = () => {
 	return `./secrets/${prefix}.sops.json`;
 };
 
-const getSecrets = async() => {
+const getSecrets = async () => {
 	try {
-		const path = _filePath();
-		const data = await sopsDecode.decodeFile(path);
-		return data;
+		const response = await runShellCommand({
+			cmd: `sops --decrypt ${_filePath()}`
+		});
+		return JSON.parse(response);
 	} catch (err) {
 		console.error(err);
-		return {};
+		return {}
 	}
 };
 
