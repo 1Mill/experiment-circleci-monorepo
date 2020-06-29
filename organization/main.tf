@@ -11,3 +11,6 @@ output "testing_value" {
 resource "aws_iam_group" "engineers" {
 	name = "engineers"
 }
+resource "aws_iam_instance_profile" "testing" {
+	name = "delete-this-if-you-see-it"
+}
