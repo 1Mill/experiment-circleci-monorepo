@@ -12,5 +12,7 @@ resource "aws_iam_group" "engineers" {
 	name = "engineers"
 }
 resource "aws_iam_user" "some_user" {
-	name = "delete-this-if-you-see-it"
+	for_each = var.USERNAMES
+
+	name = each.value
 }
