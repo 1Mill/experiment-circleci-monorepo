@@ -16,3 +16,8 @@ resource "aws_iam_user" "engineer" {
 
 	name = each.value
 }
+resource "aws_iam_group_membership" "engineer" {
+	group = aws_iam_group.engineers.name
+	name = "engineering-group-membership"
+	users = [for u in aws_iam_user.engineer : u.name]
+}
