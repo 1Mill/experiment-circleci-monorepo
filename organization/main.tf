@@ -11,7 +11,7 @@ output "testing_value" {
 resource "aws_iam_group" "engineers" {
 	name = "engineers"
 }
-resource "aws_iam_user" "some_user" {
+resource "aws_iam_user" "engineer" {
 	for_each = var.USERNAMES
 
 	name = each.value
