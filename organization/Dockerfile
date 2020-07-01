@@ -15,7 +15,8 @@ RUN mkdir ~/.terraform.d && mkdir ~/.terraform.d/plugins
 RUN unzip /tmp/sops.zip -d ~/.terraform.d/plugins
 RUN rm /tmp/sops.zip
 
-WORKDIR /app
-COPY . .
+RUN apt-get remove --purge --yes unzip wget
 
-CMD [ "bash", "entrypoint.bash" ]
+WORKDIR /app
+
+CMD [ "echo", "-- Finished --" ]
