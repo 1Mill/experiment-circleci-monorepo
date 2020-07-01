@@ -3,10 +3,6 @@ module "usernames" {
 
 	file_name = "usernames.sops.json"
 }
-output "account_names" {
-	value = module.usernames.json.usernames
-}
-
 data "aws_iam_policy" "administrator_access" {
 	arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
@@ -18,7 +14,7 @@ resource "aws_iam_group_policy_attachment" "engineering" {
 	policy_arn = data.aws_iam_policy.administrator_access.arn
 }
 resource "aws_iam_user" "engineer" {
-	for_each = var.USERNAMES
+	for_each = toset(module.usernames.json.usernames)
 
 	name = each.value
 }
