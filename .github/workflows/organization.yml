@@ -1,0 +1,25 @@
+name: organization-ci
+
+on:
+  push:
+    paths:
+      - 'organization/**'
+
+defaults:
+  run:
+    working-directory: ./organization
+
+jobs:
+  deploy-to-production:
+    if: endsWith(github.ref, 'master') == true
+    needs: [test]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - run: bash ./ci-deploy.bash
+
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - run: bash ./ci-test.bash
