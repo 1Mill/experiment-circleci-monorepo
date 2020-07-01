@@ -10,6 +10,6 @@ data "sops_file" "default" {
   	source_file = "${path.cwd}/secrets/${var.file_name}"
 }
 
-output "data" {
-	value = data.sops_file.default.data
+output "json" {
+	value = jsondecode(data.sops_file.default.raw)
 }

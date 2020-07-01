@@ -1,11 +1,10 @@
-module "secrets" {
+module "usernames" {
 	source = "./modules/secrets"
 
-	file_name = "secrets.sops.json"
+	file_name = "usernames.sops.json"
 }
-
-output "testing_value" {
-	value = module.secrets.data["testing"]
+output "account_names" {
+	value = module.usernames.json.usernames
 }
 
 data "aws_iam_policy" "administrator_access" {
