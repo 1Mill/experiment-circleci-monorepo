@@ -11,6 +11,8 @@ defaults:
 
 jobs:
   deploy-to-production:
+    container:
+      image: hashicorp/terraform:0.12.28
     if: endsWith(github.ref, 'master') == true
     needs: [test]
     runs-on: ubuntu-20.04
@@ -19,6 +21,8 @@ jobs:
       - run: bash ./ci-deploy.bash
 
   test:
+    container:
+      image: hashicorp/terraform:0.12.28
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
