@@ -9,17 +9,23 @@ defaults:
   run:
     working-directory: ./organization
 
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_PROFILE: ${{ secrets.AWS_PROFILE }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
 jobs:
   deploy-to-production:
     if: endsWith(github.ref, 'master') == true
     needs: [test]
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: bash ./ci-deploy.bash
 
   test:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: bash ./ci-test.bash
