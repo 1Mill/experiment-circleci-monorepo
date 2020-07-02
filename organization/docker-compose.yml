@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   org:
-    image: 1mill/terraform-sops:latest
+    image: 1mill/terraform-sops:2020-07-02_03-40-45
     environment:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
