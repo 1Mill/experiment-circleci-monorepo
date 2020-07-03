@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - run: docker-comopse --file ci.docker-compose.yml up deploy
+      - run: docker-compose --file ci.docker-compose.yml up deploy
 
   test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - run: docker-comopse --file ci.docker-compose.yml up test
+      - run: docker-compose --file ci.docker-compose.yml up test
