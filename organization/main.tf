@@ -23,5 +23,6 @@ resource "aws_iam_group_policy_attachment" "engineering" {
 resource "aws_iam_user" "engineer" {
 	for_each = toset(module.usernames.json.usernames)
 
+	force_destroy = true
 	name = each.value
 }
