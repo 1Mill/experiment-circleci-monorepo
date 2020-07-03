@@ -1,9 +1,9 @@
 name: organization-ci
 
-on: [push]
-  # push:
-  #   paths:
-  #     - 'organization/**'
+on:
+  push:
+    paths:
+      - 'organization/**'
 
 defaults:
   run:
